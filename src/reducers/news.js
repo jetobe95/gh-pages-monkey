@@ -1,11 +1,12 @@
 const initialState={
     news:[],
     searchResults:[],
-    country:'CO'
+    country:'co',
+    language:"es",
 }
 export default (state=initialState,action)=>{
     const {type,payload}=action;
-    const {news,searchResults}=state;
+    // const {news,searchResul}=state;
     switch (type) {
         case "LOAD_NEWS":
             return{
@@ -19,6 +20,7 @@ export default (state=initialState,action)=>{
             return{
                 ...state,country:payload,
             }
+          
 
     
         default:

@@ -4,7 +4,7 @@ const News = ({src,title,description,link,author,source}) => {
   return (
     <div className="col-12">
     <div className="card m-4" style={{width:"18rem"}}>
-      <img className="card-img-top" src={src} height={150} width={50} alt="Photo"/>
+      <img className="card-img-top" src={src} height={150} width={50} alt={"Foto"}/>
      
         <div className="card-body">
             <h5 className="card-title" style={{fontWeight:"bold"}}>{title}</h5>
