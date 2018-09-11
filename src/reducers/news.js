@@ -1,6 +1,7 @@
 const initialState={
     news:[],
     searchResults:[],
+    country:'CO'
 }
 export default (state=initialState,action)=>{
     const {type,payload}=action;
@@ -14,6 +15,10 @@ export default (state=initialState,action)=>{
           return{
               ...state,searchResults:payload.searchResults,
           }
+          case 'CHANGE_COUNTRY':
+            return{
+                ...state,country:payload,
+            }
 
     
         default:

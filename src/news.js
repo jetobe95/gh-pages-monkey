@@ -8,7 +8,7 @@ const News = ({src,title,description,link,author,source}) => {
      
         <div className="card-body">
             <h5 className="card-title" style={{fontWeight:"bold"}}>{title}</h5>
-            <span class="badge badge-info">{source}</span>
+            <span className="badge badge-info">{source}</span>
             <p  className="card-text">{description}</p>
             <a href={link}>Ver mas...</a>
         </div>
