@@ -8,6 +8,7 @@
     "react-dom": "16.5.0",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.5",
+    "react-timeago": "^4.1.9",
     "redux": "^4.0.0",
     "scrollreveal": "^4.0.1"
   },

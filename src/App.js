@@ -111,7 +111,7 @@ loadData=async(country)=>{
 
         <Navbar search={this.Search} />
         <div className="dropdown m-3 ">
-          <button className="btn btn-success dropdown-toggle btn-sm "
+          <button className="btn btn-outline-dark  dropdown-toggle btn-sm "
            type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {this.state.category.toUpperCase() ||'Categories'}
            </button>
@@ -129,14 +129,14 @@ loadData=async(country)=>{
           
           
             <div className="container"
-              style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", flexWrap: "wrap" }}>
+              style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
               {news.map((item,key) => {
                 return (
                   <div className="row"
                   key={item.publishedAt}
                   >
                     <News
-                  
+                      publishedAt={item.publishedAt}
                       source={item.source.name}
                       title={item.title}
                       link={item.url}
