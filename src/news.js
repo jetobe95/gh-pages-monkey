@@ -5,6 +5,7 @@ import spanishStrings from 'react-timeago/lib/language-strings/es'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
 const formatter = buildFormatter(spanishStrings)
  class News extends Component {
+   
   componentDidMount(){
     const config = {
       origin: 'bottom',
@@ -20,19 +21,36 @@ const formatter = buildFormatter(spanishStrings)
   }
   render() {
     const {src,source,title,link,description,publishedAt}=this.props;
+    
+    
     return (
       <div className="col-12" ref={ref=>this.ref=ref}>
       <div className="card m-4" style={{width:"18rem"}}>
-        <img className="card-img-top" src={src} height={150} width={50} alt={"Foto"}/>
+      {src==null?
+        <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",marginTop:10}}>
+        <i className="fas fa-exclamation-circle fa-3x"></i> 
+        <p>Imagen no disponible</p>
+        </div>
+       :
+       
+        <img 
+        className="card-img-top"  
+        src={src} 
+        height={150} width={50} 
+        alt={"Foto"}/>
+       }
+        
        
           <div className="card-body">
+      
               <h5 className="card-title" style={{fontWeight:"bold"}}>{title}</h5>
               <span className="badge badge-info">{source}</span>
               <TimeAgo className="ml-2" style={{color:"grey",fontSize:11}} date={publishedAt} formatter={formatter}/>
               <p  className="card-text">{description}</p>
-              <a href={link}>Ver mas...</a>
-              
           </div>
+          <div className="card-footer"><a href={link}>Ver mas...</a></div>
+              
+              
       </div>
   
       </div>

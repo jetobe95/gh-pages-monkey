@@ -150,6 +150,7 @@ loadData=async(country)=>{
             </div>
           
           }
+         
       </div>
     );
   }

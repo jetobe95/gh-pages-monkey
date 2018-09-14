@@ -52,7 +52,7 @@ class Navbar extends Component {
               <li className="nav-link" >
                 <a style={{ color: "white" }} href="https://reactjs.org/">
 
-                  <i class="fab fa-react fa-lg"></i>
+                  <i className="fab fa-react fa-lg"></i>
                 </a>
 
               </li>
