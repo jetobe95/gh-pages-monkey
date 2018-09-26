@@ -3,24 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import { Provider } from "react-redux";
+import { Provider } from 'react-redux';
 import Store from './store/index';
 
-
-     
-   
-
-
 const Index = () => {
-    return (
-        <Provider store={Store}>
-            <App />
-        </Provider>
-    )
-}
+  return (
+    <Provider store={Store}>
+      <App />
+    </Provider>
+  );
+};
 
-
-
-
-ReactDOM.render(<Index/>, document.getElementById('root'));
+ReactDOM.render(<Index />, document.getElementById('root'));
 registerServiceWorker();

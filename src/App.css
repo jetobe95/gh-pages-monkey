@@ -17,18 +17,22 @@
 .App-title {
   font-size: 1.5em;
 }
-.container .row div h1{
+.container .row div h1 {
   background-color: blueviolet;
   border-radius: 5px;
   border: 2px solid white;
   text-align: center;
-  color:white;
+  color: white;
 }
 .App-intro {
   font-size: large;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
