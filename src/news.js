@@ -2,7 +2,8 @@ import React,{Component} from 'react'
 import ScrollReveal from 'scrollreveal'
 import TimeAgo from 'react-timeago';
 import spanishStrings from 'react-timeago/lib/language-strings/es'
-import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
+import buildFormatter from 'react-timeago/lib/formatters/buildFormatter';
+import './news.css'
 const formatter = buildFormatter(spanishStrings)
  class News extends Component {
    
@@ -24,17 +25,18 @@ const formatter = buildFormatter(spanishStrings)
     
     
     return (
-      <div className="col-12" ref={ref=>this.ref=ref}>
-      <div className="card m-4" style={{width:"18rem"}}>
+      <div className="col-12 col-sm-3 col-md-3 mb-4" ref={ref=>this.ref=ref}>
+      <div className="card" style={{width:"18rem"}}>
       {src==null?
         <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",marginTop:10}}>
         <i className="fas fa-exclamation-circle fa-3x"></i> 
-        <p>Imagen no disponible</p>
+        <p style={{fontFamily:'Frank Ruhl Libre'}}>Imagen no disponible</p>
         </div>
        :
        
         <img 
-        className="card-img-top"  
+
+        className="card-img-top img-thumbnail "  
         src={src} 
         height={150} width={50} 
         alt={"Foto"}/>
@@ -43,12 +45,15 @@ const formatter = buildFormatter(spanishStrings)
        
           <div className="card-body">
       
-              <h5 className="card-title" style={{fontWeight:"bold"}}>{title}</h5>
-              <span className="badge badge-info">{source}</span>
-              <TimeAgo className="ml-2" style={{color:"grey",fontSize:11}} date={publishedAt} formatter={formatter}/>
-              <p  className="card-text">{description}</p>
+              <h5 className="card-title" style={{fontFamily:'Frank Ruhl Libre',
+              fontWeight:700}}>{title}</h5>
+              <span className="badge badge-info" style={{fontFamily:'Frank Ruhl Libre'}}>{source}</span>
+              <TimeAgo className="ml-2" style={{color:"grey",fontSize:11,fontFamily:'Frank Ruhl Libre'}} date={publishedAt} formatter={formatter}/>
+              <p  className="card-text" style={{fontFamily:'Frank Ruhl Libre'}}>{description}</p>
           </div>
-          <div className="card-footer"><a href={link}>Ver mas...</a></div>
+          <div className="card-footer">
+          <a style={{color:'#212529',fontFamily:'Frank Ruhl Libre'}} 
+          href={link}>Ver mas...</a></div>
               
               
       </div>

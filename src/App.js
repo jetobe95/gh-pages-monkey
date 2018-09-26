@@ -3,17 +3,13 @@ import { connect } from "react-redux";
 import './App.css';
 import Navbar from "./navbar";
 import News from './news';
+import './news.css'
+const API_KEY = "60a49976bbd7461fabb075d1d4c35371";
 class App extends Component {
-  state = {
-   
-    category:'technology',
-    loading:true,
-  }
+  state = {category:'technology', loading:true}
 
 loadData=async(country)=>{
   this.setState({loading:true})
-    // const {country}=this.props;
-    const API_KEY = "60a49976bbd7461fabb075d1d4c35371";
     const {category} = this.state
     
     const q = "";
@@ -31,7 +27,6 @@ loadData=async(country)=>{
   async componentDidMount() {
     
     const {country}=this.props;
-    const API_KEY = "60a49976bbd7461fabb075d1d4c35371";
     const {category} = this.state
     
     const q = "";
@@ -63,11 +58,7 @@ loadData=async(country)=>{
   
   
   Search = async (text) => {
-    // this.render()
-    
-    console.warn("Search metod")
     const {country}=this.props;
-    
     const {category}=this.state;
     this.setState({loading:true})
     const URI = `https://newsapi.org/v2/top-headlines?country=${country}&q=${text}&category=${category}&apiKey=60a49976bbd7461fabb075d1d4c35371`;
@@ -104,38 +95,49 @@ loadData=async(country)=>{
     }
 
 
-
+const {category,loading}=this.state
 
     return (
-      <div>
+      <div >
 
         <Navbar search={this.Search} />
-        <div className="dropdown m-3 ">
-          <button className="btn btn-outline-dark  dropdown-toggle btn-sm "
-           type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {this.state.category.toUpperCase() ||'Categories'}
+        <div className="dropdown m-3">
+          <button 
+          style={{fontFamily:'Frank Ruhl Libre'}}
+          className="btn btn-outline-dark  dropdown-toggle btn-sm "
+           type="button" id="dropdownMenuButton" data-toggle="dropdown" 
+           aria-haspopup="true" aria-expanded="false">
+           
+           {category.toUpperCase()}
+          
            </button>
-           {this.state.loading&&<i className="m-3 fas fa-spinner fa-spin fa-lg"></i>}
+           {loading&&<i className="m-3 fas fa-spinner fa-spin fa-lg"></i>}
 
           <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a onClick={()=>this.dropdown("general")} className="dropdown-item" >General</a>
-            <a onClick={()=>this.dropdown("technology")} className="dropdown-item" >Technology</a>
-            <a onClick={()=>this.dropdown("entertainment")} className="dropdown-item" >Entertainment</a>
+            <a onClick={()=>this.dropdown("general")} className="dropdown-item"  >General</a>
+            <a onClick={()=>this.dropdown("technology")} className="dropdown-item"  >Technology</a>
+            <a onClick={()=>this.dropdown("entertainment")} className="dropdown-item"  >Entertainment</a>
             <a onClick={()=>this.dropdown("sports")} className="dropdown-item" >Sports</a>
-            {/* <a class="dropdown-item" href="#">Something else here</a> */}
           </div>
         </div>
-        {this.state.loading||
+        {loading||
           
           
-            <div className="container"
-              style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
+            <div className="container">
+                  <div className="row"
+              style={{ display: "flex",
+              
+               flexDirection: "row", flexWrap: "wrap",
+               justifyContent:'center'}}
+                  >
               {news.map((item,key) => {
                 return (
-                  <div className="row"
+                  <div
+
                   key={item.publishedAt}
                   >
                     <News
+                      
                       publishedAt={item.publishedAt}
                       source={item.source.name}
                       title={item.title}
@@ -143,10 +145,12 @@ loadData=async(country)=>{
                       src={item.urlToImage}
                       description={item.description}
                     />
+
                   </div>
 
                 )
               })}
+                  </div>
             </div>
           
           }

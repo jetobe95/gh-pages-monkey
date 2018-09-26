@@ -30,10 +30,14 @@ class Navbar extends Component {
 
     const { search, country } = this.props;
     return (
-      <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a className="navbar-brand" style={{ color: "white", fontFamily: "'Noto Serif KR', sans-serif", fontWeight: "bold" }} >
-            News   <span style={{ textAlign: "center", paddingTop: 0, paddingBottom: 3 }} className="badge badge-pill badge-light">{country.toLowerCase()}</span>
+      <div className='sticky-top'>
+        <nav className="navbar navbar-expand-lg  navbar-dark bg-dark">
+          <a className="navbar-brand" style={{ color: "white",
+           fontFamily: 'Frank Ruhl Libre', fontWeight: "bold" }} >
+            News  
+             <span 
+             style={{ textAlign: "center", paddingTop: 0, paddingBottom: 3,fontFamily:'Frank Ruhl Libre' }}
+              className="badge badge-pill badge-light">{country.toLowerCase()}</span>
           </a>
 
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

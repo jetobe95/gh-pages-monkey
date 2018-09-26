@@ -1,0 +1,9 @@
+@media only screen and (max-width: 991.98px) {
+    .card-new {
+        background-color: lightblue;
+        margin-left: 10%;
+    }
+}
+a,button,input::placeholder{
+    font-family: 'Frank Ruhl Libre';
+}
