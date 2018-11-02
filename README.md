@@ -1,5 +1,17 @@
 
-# Página para visualizar noticias
+# Página para visualizar noticias (Create-react-app)
+
+#### En esta página podras:
+- Ver noticias de último momento
+- Filtrar las noticias pot categorias
+- Seleccionar un país especifico
+- Realizar Busquedas
+
+### ¿Comó Empezar a usarla?
+1. git clone.
+2. `npm install` ó `yarn install`.
+3. `npm start`
+
 
 ## Componentes
 |Componente|props|default|
@@ -23,6 +35,14 @@ const news = (state = initialState,action) =>{
     case "XXXX"
     return state
    }
+   //.....
 }
+export default news
 
 ```
+ 2. Crear Store de Redux
+ 
+ ### ¿ De que servicio obtengo las noticias?
+   Documentación
+   
+  [APINEWS.org](https://newsapi.org/)
